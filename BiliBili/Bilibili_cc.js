@@ -10,7 +10,7 @@
 
 [rewrite_local]
 
-^https?:\/\/i.\.hdslb\.com\/bfs\/subtitle\/.+\.json$ url script-response-body https://raw.githubusercontent.com/chxm1023/script/main/Rewrite/Bilibili/Bilibili_cc.js
+^https?:\/\/i.\.hdslb\.com\/bfs\/subtitle\/.+\.json$ url script-response-body https://raw.githubusercontent.com/xjbc123/xjbc123/refs/heads/main/BiliBili/Bilibili_cc.js
 
 [mitm]
 

@@ -8,7 +8,7 @@
  *      word_preview / book_reading / questions / book_guide 的 open = true
  *
  * [rewrite_local]
- * ^https?:\/\/ios\.abc-learning\.net\/api\/v\d+\/learning\/book\/ url script-response-body http://script.hub/file/_start_/https://raw.githubusercontent.com/xjbc123/xjbc123/refs/heads/main/ABClearning/ABCLearning.js/_end_/ABCLearning.plugin?type=qx-rewrite&target=loon-plugin&del=true&jqEnabled=true
+ * ^https?:\/\/ios\.abc-learning\.net\/api\/v\d+\/learning\/book\/ url script-response-body https://raw.githubusercontent.com/xjbc123/xjbc123/refs/heads/main/ABClearning/ABCLearning.js
  *
  * [mitm]
  * hostname = ios.abc-learning.net, *.abc-learning.net

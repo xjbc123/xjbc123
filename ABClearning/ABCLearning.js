@@ -1,18 +1,10 @@
 /*
- * ABC Learning 解锁脚本 v3.0
- * 适用：Quantumult X（Surge/Loon/Stash 见文末头部改法）
- *
- * 处理逻辑：
- *   1. /api/v1/learning/book/list    → 每本书 is_free = 1
- *   2. /api/v1/learning/book/* 详情  → is_free = 1
- *      word_preview / book_reading / questions / book_guide 的 open = true
- *
-  [rewrite_local]
-  ^https?:\/\/ios\.abc-learning\.net\/api\/v\d+\/learning\/book\/ url script-response-body https://raw.githubusercontent.com/xjbc123/xjbc123/refs/heads/main/ABClearning/ABCLearning.js
- *
-  [mitm]
-  hostname = ios.abc-learning.net, *.abc-learning.net
- */
+ABCLearning 解锁 v3.1
+[rewrite_local]
+^https?:\/\/ios\.abc-learning\.net\/api\/v\d+\/learning\/book\/ url script-response-body https://cdn.jsdelivr.net/gh/xjbc123/xjbc123@main/ABClearning/ABCLearning.js
+[mitm]
+hostname = ios.abc-learning.net, *.abc-learning.net
+*/
 
 const LOG = true;
 
@@ -32,7 +24,7 @@ function patchBookList(data, changed) {
   });
 }
 
-/* 详情：靠结构识别，不依赖路径，避免误伤其他接口 */
+/* 详情：靠结构识别，不依赖路径 */
 function isBookDetail(data) {
   return !!(data.book_reading || data.word_preview || data.questions || data.book_guide);
 }
